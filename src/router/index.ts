@@ -11,7 +11,13 @@ const router = createRouter({
       redirect: '/dashboard',
       children: [
         {
-          path: '/dashboard',
+          path: '/dashboard/desktop',
+          name: 'Dashboard',
+          component: () => import('../views/Dashboard.vue'),
+          meta: { title: '仪表盘' }
+        },
+        {
+          path: '/dashboard/message',
           name: 'Dashboard',
           component: () => import('../views/Dashboard.vue'),
           meta: { title: '仪表盘' }
@@ -61,19 +67,19 @@ const router = createRouter({
           meta: { title: '学生信息管理' },
           children: [
             {
-              path: '/student/list',
+              path: '/management/student/list',
               name: 'StudentList',
               component: () => import('../views/student/StudentList.vue'),
               meta: { title: '学生列表' }
             },
             {
-              path: '/student/detail/:id',
+              path: '/management/student/detail/:id',
               name: 'StudentDetail',
               component: () => import('../views/student/StudentDetail.vue'),
               meta: { title: '学生详情' }
             },
             {
-              path: '/student/add',
+              path: '/management/student/add',
               name: 'StudentAdd',
               component: () => import('../views/student/StudentAdd.vue'),
               meta: { title: '添加学生' }
@@ -83,50 +89,50 @@ const router = createRouter({
       ]
     },
     {
-      path: '/teacher',
+      path: '/management/teacher',
       name: 'Teacher',
       component: Layout,
       meta: { title: '教师信息管理' },
       children: [
         {
-          path: '/teacher/list',
+          path: '/management/teacher/list',
           name: 'TeacherList',
           component: () => import('../views/teacher/TeacherList.vue'),
           meta: { title: '教师列表' }
         },
         {
-          path: '/teacher/detail/:id',
+          path: '/management/teacher/detail/:id',
           name: 'TeacherDetail',
           component: () => import('../views/teacher/TeacherDetail.vue'),
           meta: { title: '教师详情' }
         },
         {
-          path: '/teacher/add',
+          path: '/management/teacher/add',
           name: 'TeacherAdd',
           component: () => import('../views/teacher/TeacherAdd.vue'),
           meta: { title: '添加教师' }
         },
         // 教师门户
         {
-          path: '/teacher/portal',
+          path: '/management/teacher/portal',
           name: 'TeacherPortal',
           component: () => import('../views/teacher/TeacherPortal.vue'),
           meta: { title: '教师门户' }
         },
         {
-          path: '/teacher/schedule',
+          path: '/management/teacher/schedule',
           name: 'TeacherSchedule',
           component: () => import('../views/teacher/TeacherSchedule.vue'),
           meta: { title: '个人课表' }
         },
         {
-          path: '/teacher/lesson-records',
+          path: '/management/teacher/lesson-records',
           name: 'LessonRecords',
           component: () => import('../views/teacher/LessonRecords.vue'),
           meta: { title: '课堂记录' }
         },
         {
-          path: '/teacher/teaching-data',
+          path: '/management/teacher/teaching-data',
           name: 'TeachingData',
           component: () => import('../views/teacher/TeachingData.vue'),
           meta: { title: '教学数据' }
@@ -134,6 +140,22 @@ const router = createRouter({
       ]
 
     },
+    {
+      path: '/situation',
+      name: 'Situation',
+      component: Layout,
+      meta: { title: '学情数据' },
+      children: [
+        {
+          path: '/situation/learning',
+          name: 'SituationLearning',
+          component: () => import('../views/teacher/TeachingData.vue'),
+          meta: { title: '教学数据' }
+        }
+      ]
+    },
+
+
     {
       path: '/login',
       name: 'Login',

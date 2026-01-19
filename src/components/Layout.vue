@@ -210,11 +210,11 @@ const isCollapsed = ref(false)
 const showTabs = ref(true)
 const activeTab = ref('dashboard')
 const tabList = ref([
-  { name: 'dashboard', title: '首页', closable: false },
-  { name: 'system', title: '系统管理', closable: true },
-  { name: 'student', title: '学生信息管理', closable: true },
-  { name: 'teacher', title: '教师管理', closable: true },
-  { name: 'class', title: '班级管理', closable: true }
+  { name: 'dashboard', title: '首页', closable: false }
+  // { name: 'system', title: '系统管理', closable: true },
+  // { name: 'student', title: '学生信息管理', closable: true },
+  // { name: 'teacher', title: '教师管理', closable: true },
+  // { name: 'class', title: '班级管理', closable: true }
 ])
 
 // 计算当前激活的菜单
@@ -227,18 +227,66 @@ const menuList = computed(() => {
   return [
     {
       path: '/dashboard',
-      meta: { title: '首页', icon: 'House' },
+      meta: { title: '工作台', icon: 'House' },
       children: [
         {
-          path: '/dashboard/manager',
-          meta: { title: '教务首页', icon: 'House' }
+          path: '/dashboard/desktop',
+          meta: { title: '我的桌面', icon: 'House' }
         },
         {
-          path: '/dashboard/teacher',
-          meta: { title: '教师首页', icon: 'House' }
+          path: '/dashboard/message',
+          meta: { title: '消息中心', icon: 'House' }
         }
       ]
     },
+    {
+      path: '/management',
+      meta: { title: '教务管理', icon: 'Setting' },
+      children: [
+        {
+          path: '/management/student/list',
+          meta: { title: '学生列表', icon: 'User' }
+        },
+        {
+          path: '/management/teacher/list',
+          meta: { title: '教师列表', icon: 'User' },
+        }, {
+          path: '/management/class/list',
+          meta: { title: '班级管理', icon: 'User' }
+        },
+        {
+          path: '/management/class/studentManager',
+          meta: { title: '排课管理', icon: 'Menu' }
+        },
+        {
+          path: '/management/class/learningProgress',
+          meta: { title: '课堂记录', icon: 'Menu' }
+        },
+        {
+          path: '/management/class/weakKnowledgePoints',
+          meta: { title: '教室/资源', icon: 'Menu' }
+        }
+      ]
+    },
+    {
+      path: '/situation',
+      meta: { title: '学情数据', icon: 'UserFilled' },
+      children: [
+        {
+          path: '/situation/learning',
+          meta: { title: '学生看板', icon: 'User' }
+        },
+        {
+          path: '/situation/warning',
+          meta: { title: '预警中心', icon: 'User' }
+        },
+        {
+          path: '/situation/spectaculars',
+          meta: { title: '数据看板', icon: 'User' }
+        }
+      ]
+    },
+
     {
       path: '/system',
       meta: { title: '系统管理', icon: 'Setting' },
@@ -264,73 +312,74 @@ const menuList = computed(() => {
           meta: { title: '字典管理', icon: 'Menu' }
         }
       ]
-    },
-    {
-      path: '/student',
-      meta: { title: '学生管理', icon: 'User' },
-      children: [
-        {
-          path: '/student/list',
-          meta: { title: '学生列表', icon: 'User' }
-        }
-        // {
-        //   path: '/student/records',
-        //   meta: { title: '学生档案', icon: 'Menu' }
-        // },
-        // {
-        //   path: '/student/leaningPortraits',
-        //   meta: { title: '学习画像', icon: 'Menu' }
-        // },
-        // {
-        //   path: '/student/learningProgress',
-        //   meta: { title: '学习进度', icon: 'Menu' }
-        // },
-        // {
-        //   path: '/student/leaningReport',
-        //   meta: { title: '学生学情报告', icon: 'Menu' }
-        // },
-        // {
-        //   path: '/student/alertCenter',
-        //   meta: { title: '学生预警中心', icon: 'Menu' }
-        // }
-      ]
-    },
-    {
-      path: '/teacher',
-      meta: { title: '教师管理', icon: 'UserFilled' },
-      children: [
-        {
-          path: '/teacher/list',
-          meta: { title: '教师列表', icon: 'User' }
-        }
-      ]
-    },
-    {
-      path: '/class',
-      meta: { title: '班级管理', icon: 'Avatar' },
-      children: [
-        {
-          path: '/class/list',
-          meta: { title: '班级列表', icon: 'User' }
-        },
-        {
-          path: '/class/studentManager',
-          meta: { title: '班级学生管理', icon: 'Menu' }
-        },
-        {
-          path: '/class/learningProgress',
-          meta: { title: '班级学习进度', icon: 'Menu' }
-        },
-        {
-          path: '/class/weakKnowledgePoints',
-          meta: { title: '班级薄弱知识点', icon: 'Menu' }
-        },
-        {
-          path: '/class/teachingPlan',
-          meta: { title: ' 班级教学计划', icon: 'Menu' }
-        }
-      ]
     }
+
+    // {
+    //   path: '/student',
+    //   meta: { title: '学生管理', icon: 'User' },
+    //   children: [
+    //     {
+    //       path: '/student/list',
+    //       meta: { title: '学生列表', icon: 'User' }
+    //     }
+    //     // {
+    //     //   path: '/student/records',
+    //     //   meta: { title: '学生档案', icon: 'Menu' }
+    //     // },
+    //     // {
+    //     //   path: '/student/leaningPortraits',
+    //     //   meta: { title: '学习画像', icon: 'Menu' }
+    //     // },
+    //     // {
+    //     //   path: '/student/learningProgress',
+    //     //   meta: { title: '学习进度', icon: 'Menu' }
+    //     // },
+    //     // {
+    //     //   path: '/student/leaningReport',
+    //     //   meta: { title: '学生学情报告', icon: 'Menu' }
+    //     // },
+    //     // {
+    //     //   path: '/student/alertCenter',
+    //     //   meta: { title: '学生预警中心', icon: 'Menu' }
+    //     // }
+    //   ]
+    // },
+    // {
+    //   path: '/teacher',
+    //   meta: { title: '教师管理', icon: 'UserFilled' },
+    //   children: [
+    //     {
+    //       path: '/teacher/list',
+    //       meta: { title: '教师列表', icon: 'User' }
+    //     }
+    //   ]
+    // },
+    // {
+    //   path: '/class',
+    //   meta: { title: '班级管理', icon: 'Avatar' },
+    //   children: [
+    //     {
+    //       path: '/class/list',
+    //       meta: { title: '班级列表', icon: 'User' }
+    //     },
+    //     {
+    //       path: '/class/studentManager',
+    //       meta: { title: '班级学生管理', icon: 'Menu' }
+    //     },
+    //     {
+    //       path: '/class/learningProgress',
+    //       meta: { title: '班级学习进度', icon: 'Menu' }
+    //     },
+    //     {
+    //       path: '/class/weakKnowledgePoints',
+    //       meta: { title: '班级薄弱知识点', icon: 'Menu' }
+    //     },
+    //     {
+    //       path: '/class/teachingPlan',
+    //       meta: { title: ' 班级教学计划', icon: 'Menu' }
+    //     }
+    //   ]
+    // }
   ]
 })
 
@@ -383,11 +432,12 @@ onMounted(() => {
     activeTab.value = 'system'
   } else if (currentPath.includes('/menu')) {
     activeTab.value = 'system/menu'
-  } else if (currentPath.includes('/student')) {
-    activeTab.value = 'student'
-  } else if (currentPath.includes('/teacher')) {
-    activeTab.value = 'teacher'
   }
+  //  else if (currentPath.includes('/student')) {
+  //   activeTab.value = 'student'
+  // } else if (currentPath.includes('/teacher')) {
+  //   activeTab.value = 'teacher'
+  // }
 })
 </script>
 
