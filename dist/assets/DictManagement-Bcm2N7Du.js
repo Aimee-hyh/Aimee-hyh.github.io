@@ -1,0 +1,1 @@
+import{d as a,c as n,a as o,b as s,r as c,o as r,_}from"./index-Pv0t0kya.js";const p={class:"dict-management-container"},m=a({__name:"DictManagement",setup(i){return(d,e)=>{const t=c("el-empty");return r(),n("div",p,[e[0]||(e[0]=o("h2",{class:"page-title"},"字典管理",-1)),s(t,{description:"字典管理功能开发中"})])}}}),f=_(m,[["__scopeId","data-v-811543b0"]]);export{f as default};

@@ -1,0 +1,1 @@
+import{d as o,c as a,a as n,b as s,r as c,o as r,_}from"./index-Pv0t0kya.js";const p={class:"role-management-container"},m=o({__name:"RoleManagement",setup(l){return(d,e)=>{const t=c("el-empty");return r(),a("div",p,[e[0]||(e[0]=n("h2",{class:"page-title"},"角色管理",-1)),s(t,{description:"角色管理功能开发中"})])}}}),f=_(m,[["__scopeId","data-v-b34888d6"]]);export{f as default};

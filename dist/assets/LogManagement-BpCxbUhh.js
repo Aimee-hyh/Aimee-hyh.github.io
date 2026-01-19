@@ -1,0 +1,1 @@
+import{d as o,c as a,a as n,b as s,r as c,o as r,_}from"./index-Pv0t0kya.js";const p={class:"log-management-container"},m=o({__name:"LogManagement",setup(d){return(l,e)=>{const t=c("el-empty");return r(),a("div",p,[e[0]||(e[0]=n("h2",{class:"page-title"},"日志管理",-1)),s(t,{description:"日志管理功能开发中"})])}}}),g=_(m,[["__scopeId","data-v-f9eed410"]]);export{g as default};

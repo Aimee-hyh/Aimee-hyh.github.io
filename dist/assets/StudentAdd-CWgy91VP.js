@@ -1,0 +1,1 @@
+import{d as o,c as s,a as n,b as a,r as c,o as d,_ as r}from"./index-Pv0t0kya.js";const _={class:"student-add-container"},p=o({__name:"StudentAdd",setup(l){return(m,e)=>{const t=c("el-empty");return d(),s("div",_,[e[0]||(e[0]=n("h2",{class:"page-title"},"新增学生",-1)),a(t,{description:"新增学生功能开发中"})])}}}),u=r(p,[["__scopeId","data-v-fc88c4e2"]]);export{u as default};
