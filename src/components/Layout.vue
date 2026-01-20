@@ -230,12 +230,12 @@ const menuList = computed(() => {
       meta: { title: '工作台', icon: 'House' },
       children: [
         {
-          path: '/dashboard/desktop',
+          path: '/dashboard/teacherportal',
           meta: { title: '我的桌面', icon: 'House' }
         },
         {
-          path: '/management/teacher/schedule',
-          meta: { title: '个人课表', icon: 'Houser' }
+          path:'/teacher/schedule',
+          meta:{title:'个人课表',icon:'Houser'}
         }
         ,
         {
@@ -249,26 +249,26 @@ const menuList = computed(() => {
       meta: { title: '教务管理', icon: 'Setting' },
       children: [
         {
-          path: '/management/student/list',
+          path: '/student/list',
           meta: { title: '学生列表', icon: 'User' }
         },
         {
-          path: '/management/teacher/list',
+          path: '/teacher/list',
           meta: { title: '教师列表', icon: 'User' },
         }, {
-          path: '/management/class/list',
+          path: '/class/list',
           meta: { title: '班级管理', icon: 'User' }
         },
         {
-          path: '/management/class/studentManager',
+          path: '/class/studentManager',
           meta: { title: '排课管理', icon: 'Menu' }
         },
         {
-          path: '/management/teacher/lesson-records',
+          path: '/teacher/lesson-records',
           meta: { title: '课堂记录', icon: 'Menu' }
         },
         {
-          path: '/management/class/weakKnowledgePoints',
+          path: '/class/weakKnowledgePoints',
           meta: { title: '教室/资源', icon: 'Menu' }
         }
       ]
