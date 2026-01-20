@@ -1,12 +1,12 @@
 <template>
   <div class="teacher-portal-container">
     <!-- 页面标题 -->
-    <h2 class="page-title">教师门户</h2>
+    <!-- <h2 class="page-title">教师门户</h2> -->
     
     <!-- 教师信息概览 -->
     <el-card shadow="hover" class="overview-card">
       <div class="overview-content">
-        <div class="avatar-section">
+        <!-- <div class="avatar-section">
           <el-avatar :size="120" class="teacher-avatar">
             <template #default>
               <el-icon><UserFilled /></el-icon>
@@ -14,9 +14,13 @@
           </el-avatar>
           <h3 class="teacher-name">张老师</h3>
           <el-tag type="success">在职</el-tag>
-        </div>
+        </div> -->
         <div class="info-section">
           <div class="info-grid">
+            <div class="info-item">
+              <!-- <span class="info-label">部门：</span> -->
+              <h3 class="info-value">张老师</h3>
+            </div>
             <div class="info-item">
               <span class="info-label">部门：</span>
               <span class="info-value">语文组</span>
@@ -253,7 +257,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, h } from 'vue'
 import { useRouter } from 'vue-router'
 import { 
   UserFilled, 
