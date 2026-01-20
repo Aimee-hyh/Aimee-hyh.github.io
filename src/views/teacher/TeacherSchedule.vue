@@ -164,7 +164,7 @@ const todayLessons = ref([
 
 // 返回门户
 const handleBack = () => {
-  router.push('/teacher/portal')
+  router.push('/management/teacher/portal')
 }
 
 // 填写课堂记录
