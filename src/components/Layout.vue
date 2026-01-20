@@ -232,6 +232,10 @@ const menuList = computed(() => {
         {
           path: '/dashboard/desktop',
           meta: { title: '我的桌面', icon: 'House' }
+        },
+        {
+          path: '/management/teacher/schedule',
+          meta: { title: '个人课表', icon: 'Houser' }
         }
         ,
         {

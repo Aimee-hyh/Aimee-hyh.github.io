@@ -11,37 +11,17 @@ const router = createRouter({
       redirect: '/dashboard',
       children: [
         {
-          path: '/dashboard',
+          path: '/dashboard/desktop',
           name: 'Dashboard',
           component: () => import('../views/Dashboard.vue'),
           meta: { title: '仪表盘' }
         },
-        // 教师首页
         {
-          path: '/management/teacher/portal',
-          name: 'TeacherPortal',
-          component: () => import('../views/teacher/TeacherPortal.vue'),
-          meta: { title: '教师门户' }
+          path: '/dashboard/message',
+          name: 'Dashboard',
+          component: () => import('../views/Dashboard.vue'),
+          meta: { title: '仪表盘' }
         },
-        {
-          path: '/management/teacher/schedule',
-          name: 'TeacherSchedule',
-          component: () => import('../views/teacher/TeacherSchedule.vue'),
-          meta: { title: '个人课表' }
-        },
-        {
-          path: '/management/teacher/lesson-records',
-          name: 'LessonRecords',
-          component: () => import('../views/teacher/LessonRecords.vue'),
-          meta: { title: '课堂记录' }
-        },
-        {
-          path: '/management/teacher/teaching-data',
-          name: 'TeachingData',
-          component: () => import('../views/teacher/TeachingData.vue'),
-          meta: { title: '教学数据' }
-        },
-
         // 系统管理
         {
           path: '/system',
@@ -82,7 +62,7 @@ const router = createRouter({
         },
         // 学生信息管理
         {
-          path: '/management/student',
+          path: '/student',
           name: 'Student',
           meta: { title: '学生信息管理' },
           children: [
@@ -108,7 +88,6 @@ const router = createRouter({
         }
       ]
     },
-    // 教师信息管理
     {
       path: '/management/teacher',
       name: 'Teacher',
@@ -132,10 +111,51 @@ const router = createRouter({
           name: 'TeacherAdd',
           component: () => import('../views/teacher/TeacherAdd.vue'),
           meta: { title: '添加教师' }
+        },
+        // 教师门户
+        {
+          path: '/management/teacher/portal',
+          name: 'TeacherPortal',
+          component: () => import('../views/teacher/TeacherPortal.vue'),
+          meta: { title: '教师门户' }
+        },
+        {
+          path: '/management/teacher/schedule',
+          name: 'TeacherSchedule',
+          component: () => import('../views/teacher/TeacherSchedule.vue'),
+          meta: { title: '个人课表' }
+        },
+        {
+          path: '/management/teacher/lesson-records',
+          name: 'LessonRecords',
+          component: () => import('../views/teacher/LessonRecords.vue'),
+          meta: { title: '课堂记录' }
+        },
+        {
+          path: '/management/teacher/teaching-data',
+          name: 'TeachingData',
+          component: () => import('../views/teacher/TeachingData.vue'),
+          meta: { title: '教学数据' }
         }
       ]
 
     },
+    {
+      path: '/situation',
+      name: 'Situation',
+      component: Layout,
+      meta: { title: '学情数据' },
+      children: [
+        {
+          path: '/situation/learning',
+          name: 'SituationLearning',
+          component: () => import('../views/teacher/TeachingData.vue'),
+          meta: { title: '教学数据' }
+        }
+      ]
+    },
+
+
     {
       path: '/login',
       name: 'Login',
